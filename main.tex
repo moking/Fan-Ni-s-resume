@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{scimisc-cv}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\title{Fan Ni's resume for Job}
+\author{Fan Ni}
+\date{Sept. 2020}
+
+%% These are custom commands defined in scimisc-cv.sty
+\cvname{Fan Ni, PhD}
+\cvpersonalinfo{
+4728 Granado Ave, Fremont, CA 94536\cvinfosep 
+313-925-5065 \cvinfosep
+nifan.man@gmail.com \cvinfosep
+\it{https://www.linkedin.com/in/fan-ni-4b591049/}
+}
+
+\begin{document}
+
+% \maketitle %% This is LaTeX's default title constructed from \title,\author,\date
+
+\makecvtitle %% This is a custom command constructing the CV title from \cvname, \cvpersonalinfo
+
+\section{Job interests}
+I have backgrounds in both computer systems (storage systems and file systems) and computer architecture. I am particularly interested in \textbf{storage systems}, \textbf{file systems}, \textbf{infrastructure software}, \textbf{cloud systems}, and \textbf{GPU/CPU architecture simulation or related software development}, and any software development or research position in the above area is my target.
+
+Note: relocation is an option for me if the position interests me.
+
+\section{About me}
+\begin{itemize}
+    \item Loving coding and debugging. Using code to solve real problems has always been my pleasure. 
+    \item Self-motivated, problem-solving and collaborative team worker, eager to learn.
+    \item A big fan of soccer and my favorable team is Arsenal from Premier League; used to play soccer a lot in university. 
+    \item Like road trip and spending my spare time with friends.
+    \item Holding \textbf{H1B} since 10/2019
+\end{itemize}
+
+\section{Education}
+\begin{itemize}
+\item PhD, Computer engineering,  University of Texas at Arlington, 2019
+\item PhD, Computer systems organization, Beihang University, China , 2014
+\item B.S., Computer science and technology, Beihang University, China,  2006
+ %   \item 2016.01-2019.5 \hspace{1.2cm}  Ph.D, University of Texas at Arlington  \hspace{2cm} Computer Engineering
+%    \item 2006.09-2014.3 \hspace{1.05cm}  Ph.D,  Beihang University, China        \hspace{2.75cm} Computer systems organization
+%    \item 2002.09-2016.07 \hspace{0.9cm} Bachelor, Beihang University, China       \hspace{2.2cm} Computer science and technology
+\end{itemize}
+
+
+ 
+\section{Work Experience}
+
+ %   \item 
+    \begin{tabular}{lp{15cm}}
+         2019.06-Now & \bf{Research software engineer, ATG, NetApp, Sunnyvale, CA} \\
+         & \small{\it Duties: 1) Exploring technique trends in storage technique field; 2) System prototyping: building prototype to evaluate new features or ideas in storage systems;}\\
+         2018.06-2018.08 & \bf{Research intern, ATG, NetApp, Sunnyvale, CA}\\
+         & \small{\it Duties: Developing algorithms to leverage Intel AVX instructions for better chunking speed in CDC-based deduplication systems;}\\
+         2014.04-2015.12 &\bf{Research Fellow,  Inspur (Beijing) Electronic Information Industry Co.}\\
+         & \small{\it Duties: Leading the architecture research team, doing large-scale CC-NUMA system research, including cache coherence optimization, system modelling and virtualization technology investigation for cloud computing environment. }\\
+         2013.05-2013.08 & \bf {Research intern, AMD research China (Beijing)}\\
+         &\small{\it Duties: Accelerating numerical functions in Numpy (a package for scientific computation in Python) with APPML (or clMagma) to explore the potential of APU in scientific computation; working with a full-time employee on new memory architecture design in APU.}
+    \end{tabular}
+
+
+\section{Selected recent publications (since 2016), \href{https://scholar.google.com/citations?user=xMbxve0AAAAJ&hl=en}{full list}}
+\begin{enumerate}
+\small
+\it
+    \item \textbf{Fan Ni} and Song Jiang, "RapidCDC: Leveraging Duplicate Locality to Accelerate Chunking in CDC-based Deduplication Systems", in Proceedings of 2019 ACM Symposium on Cloud Computing (ACM SoCC'19), Santa Cruz, CA, November, 2019.[\href{https://github.com/moking/RapidCDC}{code}]
+    \item \textbf{Fan Ni}, Xingbo Wu, Weijun Li, Lei Wang, and Song Jiang, “Leveraging SSD's Flexible Address Mapping to Accelerate Data Copy Operations”, in Proceedings of the IEEE 21st International Conference on High Performance Computing and Communications; (HPCC-2019), Zhangjiajie, China, August, 2019.
+    \item \textbf{Fan Ni}, Song Jiang, Hong Jiang, Xingbo Wu, and Jian Huang, “SDC: A Software Defined Cache Supporting Flexible Key-value-style Data Caching”, in Proceedings of the 33th ACM International Conference on Supercomputing (ICS'19), Phoenix, AZ, June, 2019.
+\item \textbf{Fan Ni}, Xing Lin, and Song Jiang, “SS-CDC: A Two-stage Parallel Content-Defined Chunking for Deduplicating Backup Storage", in Proceedings of the 12th ACM International Systems and Storage Conference (SYSTOR'19), Haifa, Israel, June, 2019.[\href{https://github.com/NetApp/SS-CDC}{code}]
+\item Xingbo Wu, \textbf{Fan Ni}, and Song Jiang, "Wormhole: A Fast Ordered Index for In-memory Data Management", in Proceedings of the European Conference on Computer Systems (EuroSys'19), Dresden, Germany, March, 2019. [\href{https://github.com/wuxb45/wormhole}{code}]
+\item \textbf{Fan Ni}, Xingbo Wu, Weijun Li, Lei Wang, and Song Jiang. "WOJ: Enabling Write-Once Full-data Journaling in SSDs by using weak-hashing-based deduplication." Performance Evaluation (IFIP Performance 2018).
+\item \textbf{Fan Ni}, Xingbo Wu, Weijun Li, and Song Jiang. “ThinDedup: An I/O Deduplication Scheme that Minimizes Efficiency Loss due to Metadata Writes”, in Proceedings of the 37th IEEE International Performance Computing and Communications Conference (IPCCC'18), Orlando, Florida, November 2018. (\textbf{\it \textbf{Best Paper Candidate}})
+\item Xingbo Wu, \textbf{Fan Ni}, Song Jiang. Search Lookaside Buffer: Efficient Caching for Index Data Structures [SoCC'17] ACM Symposium on Cloud Computing 2017
+\item Chunyi Liu, \textbf{Fan Ni}, Xingbo Wu, Xiao Zhang, Song Jiang. Freewrite: Creating (Almost) Zero-Cost Writes to SSD in Applications [SYSTOR'17] The 10th ACM International Systems and Storage Conference
+\item \textbf{Fan Ni}, Chunyi Liu, Yang Wang, Chengzhong Xu, Xiao Zhang, Song Jiang. A Hash-based Space-efficient Page-level FTL for Large-capacity SSDs [NAS'17] 12th International Conference on Networking, Architecture, and Storage (NAS)
+\item Xingbo Wu, \textbf{Fan Ni}, Li Zhang, Yandong Wang, Yufei Ren, Michel Hack, Zili Shao, Song Jiang. NVMcached: An NVM-based Key-Value Cache [APSys'16] 7th ACM SIGOPS Asia-Pacific Workshop on Systems.
+
+\end{enumerate}
+    
+
+\section{Patents}
+\begin{itemize}
+    \item “Methods for optimized variable-size deduplication using two stage content-defined
+chunking and devices thereof”, US20200081868A1
+    \item I have about 10 China patents filed or granted.
+\end{itemize}
+
+\section{Projects}
+\small
+\begin{enumerate}
+\item Using computational devices to enhance storage systems' performance: Leveraging computational devices (like SmartSSD, SmartNIC) to extend storage systems to provide better performance or save cost. As an example, with very weak CPUs in SmartNIC, we transparently improve the Get performance of rocksDB by over 20\% for some workloads.
+\item	RapidCDC:  Disclosed the existence of duplicate locality and leveraged it to accelerate the chunking process in CDC-based deduplication systems. The evaluation shows the chunking time can be reduced by more than 95\% for many real-work workloads, and a paper was accepted by SoCC.
+\item	Cache coherence protocol simulation for Large-scale CC-NUMA systems: Established a simulation system with Gem5 to simulate advanced cache coherence protocol used in complex large-scale CC-NUMA system and was award \textbf{platinum award} from Inspur, which was very rare for first year employee.
+\item	PCSim: We (A student I mentored and I) designed a parallel simulator targeting Freescale MPC8641D platform. The simulator was able to boot tailored Linux OS and complete cross-ISA embedded software testing and debugging.
+\item	Building parallel Simulator on NVIDIA CUDA platform. Our team was the first in China to build parallel architecture simulator on CUDA platform (2007, CUDA 1.0). 
+\end{enumerate}
+
+\section{Professional Skills}
+\begin{enumerate}
+\item	Very good C programming skills. C is my main working language during my research and my work. I am also familiar with C++.
+\item	Familiar with Python and Shell programming.
+\item	Familiar with Linux Kernel knowledge and have worked in the device mapper framework to develop some new I/O features.
+\item	Experience with compiler-related developing. Worked in LLVM framework to enabling binary translation for an ARM simulator. 
+\item	Experience of CUDA programming. Built a parallel cache simulator on CUDA platform.
+\item	Familiar with data structures, including array, linked list, hash table, trees, heap, etc.
+\item   Familiar with KV cache (MemCached) and KV store (LevelDB) design.
+\item	Network programming experience (libuv).
+\end{enumerate}
+
+% \section{Other Skills}
+% \begin{description}[widest=Langauges]
+% %\item[Software]	GraphPad Prism, Microsoft Word, Excel, and PowerPoint, ImageJ
+% \item[Languages]	English: professional proficiency.  Mandarin: native.  
+% \end{description}
+
+
+
+\end{document}
