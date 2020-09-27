@@ -31,7 +31,7 @@ nifan.man@gmail.com \cvinfosep
 \section{Job interests}
 I have backgrounds in both computer systems (storage systems and file systems) and computer architecture. I am particularly interested in \textbf{storage systems}, \textbf{file systems}, \textbf{infrastructure software}, \textbf{cloud systems}, and \textbf{GPU/CPU architecture simulation or related software development}, and any software development or research position in the above area is my target.
 
-Note: relocation is an option for me if the position interests me.
+Note: relocation is an option for me if the position fits me.
 
 \section{About me}
 \begin{itemize}
@@ -72,6 +72,20 @@ Note: relocation is an option for me if the position interests me.
          &\small{\it Duties: Designing test cases with C and shell and carrying them out on new Solaris release; testing new WIFI features.}
     \end{tabular}
 
+\section{Projects}
+%\small
+\begin{enumerate}
+\item (\textbf{Computational storage, SmartNIC, NFS, Key-value Store}) Using computational devices to enhance storage systems' performance: Leveraging computational devices (like SmartSSD, SmartNIC) to extend storage systems to provide better performance or save cost. As an example, with very weak CPUs in SmartNIC, we transparently improve the Get performance of rocksDB by over 20\% for some workloads.
+\item (\textbf{File systems, Deduplication, Kernel development}) WOJ (Write-once journaling): Data journaling mode in Journaling file systems (Ext3, Ext4, etc.) doubles the writes, which can significantly compromise performance and shorten SSD's lifetime. WOJ is a method to apply weak-hash based deduplication to avoid the redundant writes without compromising data correctness. The mechanism is implemented at the Linux kernel block layer as a device mapper target, and about 50\% of writes are reduced and the performance is about 2.7$\times$ higher than the approach with regular deduplication. 
+\item (\textbf{Deduplication}) RapidCDC:  In deduplication systems, to detect duplicates usually we need first cut the input files into smaller units (chunks), on which duplicates are detected. The process is time-consuming for variable-size chunking as we need to check the input files byte-by-byte to determine a chunk bounary. In the project, we disclosed the existence of duplicate locality and leveraged the chunking history to accelerate the chunking process. The evaluation shows the chunking time can be reduced by more than 95\% for many real-work workloads, and a paper was accepted by SoCC.
+\item (\textbf{Data structures, software cache, CPU cache, Gem5}) Accelerating tree traversal with software and hardware cache: trees have been widely used in many systems as the key data structures to provide infrastructure support. However, the accesses to tree structures can be expensive as we need to traverse from the head to the leaf, which can be tens of memory accesses. In the project, we proposed both software and hardware cache solutions (SLB and SDC) to accelerate tree search by caching the search results directlly in a software cache or in CPU cache with key-value stype interface. In both designs, we overcome many technique challenges, like how to process mapping collisions and data replacement.
+\item (\textbf{SSD, Key-value Store, Deduplication, Kernel development}) Freewrite: In LSM-based key-value stores (like LevelDB), the SSTables in a level needs to be merged from time to time and pushed to the next level (called compaction). The process can introduce high write amplification, which will hurt both performance and data devices' lifetime if the devices are SSD. In the project, we re-designed the layout of SSTables, and allowed some space ("bubbles") in each page unfilled to avoid the data content shift across different pages during compaction. Also, at the block-layer we use block-level deduplication to detect duplicate page writes.
+For the evaluation, we modified LevleDB and implemented a deduplication scheme at the block layer as a device mapper target, and the results showed the throughput can be improved by 26\%.
+\item (\textbf{CPU cache, Architecture Simulation, Gem5}) Cache coherence protocol simulation for Large-scale CC-NUMA systems: Established a simulation system with Gem5 to simulate advanced cache coherence protocol used in complex large-scale CC-NUMA system and was award \textbf{platinum award} from Inspur, which was very rare for first year employee.
+\item (\textbf{Architecture Simulation, OS, Embedded Systems, Parallel Programming})	PCSim: We (A student I mentored and I) designed a parallel simulator targeting Freescale MPC8641D platform. The simulator was able to boot tailored Linux OS and complete cross-ISA embedded software testing and debugging. In the project, we need to customize the boot loader (uboot) and the Linux OS to run on the simulator.
+\item (\textbf{GPU, CUDA programming, Architecture simulation})	Built a parallel cache simulator on NVIDIA CUDA platform (2007, CUDA 1.0). 
+Several design challenges are tackled, like the global synchronization among threads in multiple thread sets, and trade-off between parallelism and synchronization overhead.
+\end{enumerate}
 
 \section{Selected recent publications (since 2016), \href{https://scholar.google.com/citations?user=xMbxve0AAAAJ&hl=en}{full list}}
 \begin{enumerate}
@@ -99,24 +113,11 @@ chunking and devices thereof”, US20200081868A1
     \item I have about 10 China patents filed or granted.
 \end{itemize}
 
-\section{Projects}
-%\small
-\begin{enumerate}
-\item (\textbf{Computational storage, SmartNIC, Key-value Store}) Using computational devices to enhance storage systems' performance: Leveraging computational devices (like SmartSSD, SmartNIC) to extend storage systems to provide better performance or save cost. As an example, with very weak CPUs in SmartNIC, we transparently improve the Get performance of rocksDB by over 20\% for some workloads.
-\item (\textbf{File systems, Deduplication, Kernel development}) WOJ (Write-once journaling): Data journaling mode in Journaling file systems (Ext3, Ext4, etc.) doubles the writes, which can significantly compromise performance and shorten SSD's lifetime. WOJ is a method to apply weak-hash based deduplication to avoid the redundant writes without compromising data correctness. The mechanism is implemented at the Linux kernel block layer as a device mapper target, and about 50\% of writes are reduced and the performance is about 2.7$\times$ higher than the approach with regular deduplication. 
-\item (\textbf{Deduplication}) RapidCDC:  In deduplication systems, to detect duplicates usually we need first cut the input files into smaller units (chunks), on which duplicates are detected. The process is time-consuming for variable-size chunking as we need to check the input files byte-by-byte to determine a chunk bounary. In the project, we disclosed the existence of duplicate locality and leveraged the chunking history to accelerate the chunking process. The evaluation shows the chunking time can be reduced by more than 95\% for many real-work workloads, and a paper was accepted by SoCC.
-\item (\textbf{Data structures, software cache, CPU cache, Gem5}) Accelerating tree traversal with software and hardware cache: trees have been widely used in many systems as the key data structures to provide infrastructure support. However, the accesses to tree structures can be expensive as we need to traverse from the head to the leaf, which can be tens of memory accesses. In the project, we proposed both software and hardware cache solutions (SLB and SDC) to accelerate tree search by caching the search results directlly in a software cache or in CPU cache with key-value stype interface. In both designs, we overcome many technique challenges, like how to process mapping collisions and data replacement.
-\item (\textbf{SSD, Key-value Store, Deduplication, Kernel development}) Freewrite: In LSM-based key-value stores (like LevelDB), the SSTables in a level needs to be merged from time to time and pushed to the next level (called compaction). The process can introduce high write amplification, which will hurt both performance and data devices' lifetime if the devices are SSD. In the project, we re-designed the layout of SSTables, and allowed some space ("bubles") in each page unfilled to avoid the data content shift across different pages during compaction. Also, at the block-layer we use block-level deduplication to detect duplicate page writes.
-For the evaluation, we modified LevleDB and implemented a deduplication scheme at the block layer as a device mapper target, and the results showed the throughput can be improved by 26\%.
-\item (\textbf{CPU cache, Architecture Simulation, Gem5}) Cache coherence protocol simulation for Large-scale CC-NUMA systems: Established a simulation system with Gem5 to simulate advanced cache coherence protocol used in complex large-scale CC-NUMA system and was award \textbf{platinum award} from Inspur, which was very rare for first year employee.
-\item (\textbf{Architecture Simulation, OS, Embedded Systems, Parallel Programming})	PCSim: We (A student I mentored and I) designed a parallel simulator targeting Freescale MPC8641D platform. The simulator was able to boot tailored Linux OS and complete cross-ISA embedded software testing and debugging. In the project, we need to customize the boot loader (uboot) and the Linux OS to run on the simulator.
-\item (\textbf{GPU, CUDA programming, Architecture simulation})	Built a parallel cache simulator on NVIDIA CUDA platform (2007, CUDA 1.0). 
-Several design challenges are tackled, like the global synchronization among threads in multiple thread sets, and trade-off between parallelism and synchronization overhead.
-\end{enumerate}
+
 
 \section{Professional Skills}
 \begin{enumerate}
-\item	Very good C programming skills. C is my main working language during my research and my work. I am also familiar with C++.
+\item	Very good C programming skill. C is my main working language during my research and my work. I am also familiar with C++.
 \item	Familiar with Python and Shell programming.
 \item	Familiar with Linux Kernel knowledge and have worked in the device mapper framework to develop some new I/O features.
 \item	Experience with compiler-related developing. Worked in LLVM framework to enabling binary translation for an ARM simulator. 
