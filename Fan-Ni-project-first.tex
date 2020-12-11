@@ -29,14 +29,14 @@ nifan.man@gmail.com \cvinfosep
 \makecvtitle %% This is a custom command constructing the CV title from \cvname, \cvpersonalinfo
 
 \section{Job interests}
-I have backgrounds in both computer systems (storage systems and file systems) and computer architecture. I am particularly interested in \textbf{storage systems}, \textbf{file systems}, \textbf{infrastructure software}, \textbf{cloud systems}, and \textbf{GPU/CPU architecture simulation or related software development}, and any software development or research position in the above area is my target.
+I am now a research software engineer of the ATG group of the CTO office at NetApp. I have backgrounds and industry experience in both computer systems (storage systems and file systems) and computer architecture. I am particularly interested in \textbf{storage systems}, \textbf{file systems}, \textbf{infrastructure software}, \textbf{cloud systems}, and \textbf{GPU/CPU architecture related software development}, and any software development or research position in the above area is my target.
 
 Note: relocation is an option for me if the position fits me.
 
 \section{About me}
 \begin{itemize}
     \item Loving coding and debugging. Using code to solve real problems has always been my wish. 
-    \item Self-motivated, problem-solving and collaborative team worker, eager to learn.
+    \item Self-motivated, problem-solving and collaborative team worker, and eager to learn.
     \item A big fan of soccer and my favorable team is Arsenal from Premier League; used to play soccer a lot in university. 
     \item Like road trip and spending my spare time with friends.
     \item Holding \textbf{H1B} since 10/2019
@@ -58,27 +58,28 @@ Note: relocation is an option for me if the position fits me.
 
  %   \item 
     \begin{tabular}{lp{15cm}}
-         2019.06-Now & \bf{Research Software Engineer, Advanced Technology Group (ATG), CTO office, NetApp, Sunnyvale, CA} \\
+         2019.06-Present & \bf{Research Software Engineer, Advanced Technology Group (ATG), CTO office, NetApp, Sunnyvale, CA} \\
          & \small{\it Duties: 1) Exploring technique trends in storage technique field and generating technique reports which are accessible to the whole company; 
-         2) Building prototype to evaluate new features or ideas in storage systems, and collaborating with product teams to deploy in the products if the idea is adopted;
-         3) Building relationship with universities for research; 4) Serving as PC member of international conferences (HotEdge, APSys) and reviewer of SCI journals. }\\
+         2) Building prototype to evaluate new features or ideas in storage systems, and collaborating with product teams to deploy in the products if the feature or idea is adopted;
+         3) Building relationship with universities for cutting-edge research; 
+         4) Serving as PC member of international conferences (HotEdge, APSys) and reviewer of SCI journals. }\\
          2018.06-2018.08 & \bf{Research intern, Advanced Technology Group (ATG), CTO office, NetApp, Sunnyvale, CA}\\
-         & \small{\it Duties: Developing algorithms to leverage Intel AVX instructions for better chunking speed in CDC-based deduplication systems;}\\
+         & \small{\it Duties: Designing and Developing parallel algorithms to leverage Intel AVX instructions for better chunking speed and better deduplication ratio in CDC-based deduplication systems;}\\
          2014.04-2015.12 &\bf{Research Fellow,  Inspur (Beijing) Electronic Information Industry Co., Beijing}\\
-         & \small{\it Duties: Leading the architecture research team, doing large-scale CC-NUMA system research, including cache coherence optimization, system modelling and virtualization technology investigation for cloud computing environment. }\\
+         & \small{\it Duties: Leading the architecture research team, doing large-scale CC-NUMA system research, including cache coherence optimization, system modelling and virtualization technology investigation for cloud computing environment;}\\
          2013.05-2013.08 & \bf {Research intern, AMD research China (Beijing), Beijing}\\
-         &\small{\it Duties: Accelerating numerical functions in Numpy (a package for scientific computation in Python) with APPML (or clMagma) to explore the potential of APU in scientific computation; working with a full-time employee on new memory architecture design in APU.}\\
+         &\small{\it Duties: Accelerating numerical functions in Numpy (a package for scientific computation in Python) with APPML (or clMagma) to explore the potential of APU in scientific computation; working with a full-time employee on new memory architecture design in APU;}\\
          2010.11-2011.07 & \bf{Test intern, Oracle (Sun ERI), Beijing} \\
-         &\small{\it Duties: Designing test cases with C and shell and carrying them out on new Solaris release; testing new WIFI features.}
+         &\small{\it Duties: Designing test cases with C and shell and carrying them out on new Solaris release and testing new WIFI features.}
     \end{tabular}
 
 \section{Projects}
 %\small
 \begin{enumerate}
-\item (\textbf{Computational storage, SmartNIC, NFS, Key-value Store}) Using computational devices to enhance storage systems' performance: Leveraging computational devices (like SmartSSD, SmartNIC) to extend storage systems to provide better performance or save cost. As an example, with very weak CPUs in SmartNIC, we transparently improve the Get performance of rocksDB by over 20\% for some workloads.
-\item (\textbf{File systems, Deduplication, Kernel development}) WOJ (Write-once journaling): Data journaling mode in Journaling file systems (Ext3, Ext4, etc.) doubles the writes, which can significantly compromise performance and shorten SSD's lifetime. WOJ is a method to apply weak-hash based deduplication to avoid the redundant writes without compromising data correctness. The mechanism is implemented at the Linux kernel block layer as a device mapper target, and about 50\% of writes are reduced and the performance is about 2.7$\times$ higher than the approach with regular deduplication. 
+\item (\textbf{Computational storage, SmartNIC, NFS, Key-value Store}) Using computational devices to enhance storage systems' performance: Leveraging computational devices (like SmartSSD, SmartNIC) to extend storage systems to provide better performance or save cost. As an example, with very weak CPUs in SmartNIC, we transparently improve the Get performance of rocksDB by over 20\% for some workloads by enabling a lightweight cache on SmartNIC.
+\item (\textbf{File systems, Deduplication, Kernel development}) WOJ (Write-once journaling): Data journaling mode in Journaling file systems (Ext3, Ext4, etc.) doubles the writes, which can significantly compromise performance and shorten SSD's lifetime. WOJ is a method to apply weak-hash based deduplication to avoid the redundant writes without compromising data correctness. The mechanism is implemented at the Linux kernel block layer as a device mapper target, and about 50\% of writes are reduced and the performance is about 2.7$\times$ higher than the approach with regular deduplication approaches. A paper is accepted by IFIP Performance. 
 \item (\textbf{Deduplication}) RapidCDC:  In deduplication systems, to detect duplicates usually we need first cut the input files into smaller units (chunks), on which duplicates are detected. The process is time-consuming for variable-size chunking as we need to check the input files byte-by-byte to determine a chunk bounary. In the project, we disclosed the existence of duplicate locality and leveraged the chunking history to accelerate the chunking process. The evaluation shows the chunking time can be reduced by more than 95\% for many real-work workloads, and a paper was accepted by SoCC.
-\item (\textbf{Data structures, software cache, CPU cache, Gem5}) Accelerating tree traversal with software and hardware cache: trees have been widely used in many systems as the key data structures to provide infrastructure support. However, the accesses to tree structures can be expensive as we need to traverse from the head to the leaf, which can be tens of memory accesses. In the project, we proposed both software and hardware cache solutions (SLB and SDC) to accelerate tree search by caching the search results directlly in a software cache or in CPU cache with key-value stype interface. In both designs, we overcome many technique challenges, like how to process mapping collisions and data replacement.
+\item (\textbf{Data structures, software cache, CPU cache, Gem5}) Accelerating tree traversal with software and hardware cache: trees have been widely used in many systems as the key data structures to provide infrastructure support. However, the accesses to tree structures can be expensive as we need to traverse from the head to the leaf, which can be tens of memory accesses. In the project, we proposed both software and hardware cache solutions (SLB and SDC) to accelerate tree search by caching the search results directlly in a software cache or in CPU cache with key-value style interface. In both designs, we overcome many technique challenges, like how to process mapping collisions and data replacement.
 \item (\textbf{SSD, Key-value Store, Deduplication, Kernel development}) Freewrite: In LSM-based key-value stores (like LevelDB), the SSTables in a level needs to be merged from time to time and pushed to the next level (called compaction). The process can introduce high write amplification, which will hurt both performance and data devices' lifetime if the devices are SSD. In the project, we re-designed the layout of SSTables, and allowed some space ("bubbles") in each page unfilled to avoid the data content shift across different pages during compaction. Also, at the block-layer we use block-level deduplication to detect duplicate page writes.
 For the evaluation, we modified LevleDB and implemented a deduplication scheme at the block layer as a device mapper target, and the results showed the throughput can be improved by 26\%.
 \item (\textbf{CPU cache, Architecture Simulation, Gem5}) Cache coherence protocol simulation for Large-scale CC-NUMA systems: Established a simulation system with Gem5 to simulate advanced cache coherence protocol used in complex large-scale CC-NUMA system and was award \textbf{platinum award} from Inspur, which was very rare for first year employee.

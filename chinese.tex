@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage[T1]{fontenc}
+
+
+\usepackage{scimisc-cv}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\title{Fan Ni's resume for Job}
+\author{Fan Ni}
+\date{Sept. 2020}
+
+%% These are custom commands defined in scimisc-cv.sty
+\cvname{Ni Fan（倪（王番）），博士}
+\cvpersonalinfo{
+住址：4728 Granado Ave, Fremont, CA 94536\cvinfosep 
+电话：313-925-5065 \cvinfosep
+邮箱：nifan.man@gmail.com \cvinfosep
+\it{主页：https://www.linkedin.com/in/fan-ni-4b591049/}
+}
+
+\begin{document}
+
+% \maketitle %% This is LaTeX's default title constructed from \title,\author,\date
+
+\makecvtitle %% This is a custom command constructing the CV title from \cvname, \cvpersonalinfo
+
+\section{职业意愿}
+我具有计算机体系结构以及计算机工程（存储及文件系统）两个博士学位。对存储系统，文件系统，基础架构软件，云计算，GPU/CPU结构模拟及相关开发工作具有浓厚的兴趣，以上领域的开发或者研究工作是我的求职意愿。
+\section{自我介绍}
+\begin{itemize}
+    \item 热爱编码及调试。用代码解决实际问题一直是我的职业信条。
+    \item 自律，具有良好的解决问题能力，善于团队合作，乐于学习。
+    \item 喜欢足球运动，最喜欢的球队是英超阿森纳队，大学期间我自己也经常踢足球。
+    \item 喜欢公里旅行及自驾游，空余时间喜欢会会朋友。
+    \item 目前在美国持有\textbf{H1B} 工作许可（从 10/2019开始）。
+\end{itemize}
+
+\section{教育背景}
+\begin{itemize}
+\item 博士, 计算机工程，德州大学阿灵顿分校（UTA），2019。
+\item 博士, 计算机系统组成，北航大学，2014。
+\item 本科，计算机科学与技术，北航大学，2006。
+ %   \item 2016.01-2019.5 \hspace{1.2cm}  Ph.D, University of Texas at Arlington  \hspace{2cm} Computer Engineering
+%    \item 2006.09-2014.3 \hspace{1.05cm}  Ph.D,  Beihang University, China        \hspace{2.75cm} Computer systems organization
+%    \item 2002.09-2016.07 \hspace{0.9cm} Bachelor, Beihang University, China       \hspace{2.2cm} Computer science and technology
+\end{itemize}
+
+
+ 
+\section{工作经历}
+
+ %   \item 
+    \begin{tabular}{lp{15cm}}
+         2019.06至今 & \bf{研究员，NetApp，CTO办公室，先进技术组} \\
+         & \small{\it 主要职责：1）探索存储领域新技术及发展动向，为公司提供发展技术报告；2）构建原型系统评估新技术，并与产品部门合作集成；3）与大学建立研究合作；4）为一些国际会议担任会议的委员会成员；5）担任一些SCI期刊的审稿人。}\\
+         2018.06-2018.08 & \bf{研究实习生，NetApp，CTO办公室，先进技术组}\\
+         & \small{\it 主要职责：为CDC去重系统开发并行切块算法，保证切块速度同时不损失系统检测重复数据的能力，给予Intel AVX拓展指令验证算法的可行性及实用性。}\\
+         2014.04-2015.12 &\bf{研究员，浪潮信息（北京）}\\
+         & \small{\it 主要职责：领导体系结构研究小组开展大规模CC-NUMA系统的研究工作，主要是缓存一致性优化，系统建模以及虚拟化技术在云环境中的应用。 }\\
+         2013.05-2013.08 & \bf {研究实习生，AMD北京研究中心}\\
+         &\small{\it 主要职责：使用AMD自身提供的能够使用APU加速数值计算的库来加速Python中的数值计算库Numpy中的一些数值运算功能.}\\
+         2010.11-2011.07 & \bf{测试工程师，甲骨文（北京）} \\
+         &\small{\it 主要职责：设计C及Shell语言的测试用例来测试Solaris的发行版中新的WIFI特性。}
+    \end{tabular}
+
+\section{项目情况}
+%\small
+\begin{enumerate}
+\item (\textbf{可计算存储，智能网卡，NFS，键值系统}) 使用可计算外设来提升系统性能：利用可计算外设（比如智能SSD、智能网卡）来拓展存储系统的性能或者降低系统成本。作为一个实施实例，我们在智能网卡上实现了数据缓存，虽然网卡上的CPU非常弱，我们仍然取得了20\%的性能提升。
+\item (\textbf{文件系统，数据去重，内核开发}) WOJ (一次写日志): 日志文件系统（Ext3、Ext4）中的数据日志模式对每个写入系统的数据会写两次，从而严重降低读写性能及SSD的读写寿命。WOJ利用基于弱哈希的去重技术来避免重复的写，同时不损害系统的数据正确性。我们在内核块层实现了技术，评估结果显示，我们的方法可以减少50\%的数据写操作，同时与传统的去重技术相比，我们的技术能够提供2.7倍的性能提升。
+\item (\textbf{数据去重技术}) RapidCDC:  在数据去重系统中，为了检测重复的数据，通常我们需要首先将数据切块，然后检测重复的数据块。对于基于内容分块的方法，由于需要逐字节检测边界，这个过程非常耗时（大概需要占用系统一半的系统时间）。在这个项目组，我们发现了重复块局部性的特征，利用分块的历史信息指导分块，达到快速分块的目的。结果显示，对于很多现实数据集，使用我们的方法能够去掉95\%的分块时间。相关文章被云计算顶级会议SoCC收录。
+\item (\textbf{数据结构，软件缓存，处理器缓存，模拟器Gem5}) 使用软件、硬件缓存设计加速树的检索。树结构被广泛应用于基础架构软件中作为主要数据结构提供数据检索服务。但是，树的检索过程非常昂贵，因为每次检索需要从树的根部开始直至树的叶节点，从而导致很多次的内存访问。在该项目中，我们提出了软件及硬件缓存解决访问来加速树的查找。该解决访问提供简单的键值接口，方便使用，加速效果显著。相关论文被云计算顶级会议Socc及高性能计算顶级会议ICS收录。
+\item (\textbf{SSD、键值系统、数据去重、内核开发}) Freewrite：在基于日志结构合并树的键值系统（比如LevelDB）中，每个数据层次的数据存储文件SSTable需要不时进行合并，以去掉旧数据同时保证数据有序排列。
+该合并过程会产生大量的数据重复写操作，极大的浪费底层数据存储设备的带宽，降低设备的使用寿命。为此，我们设计了一种新的SSTable文件的结构，允许文件中出现气泡，从而减少合并过程中的数据移动，同时配合数据去重技术，达到减少数据重复写的目的。评估结果显示，系统的吞吐量提升了26\%。论文成果在系统领域知名会议Systor发表。
+\end{enumerate}
+
+\section{近期部分论文（从2006年开始），完整列表参看 \href{https://scholar.google.com/citations?user=xMbxve0AAAAJ&hl=en}{full list}}
+\begin{enumerate}
+%\small
+\it
+    \item \textbf{Fan Ni} and Song Jiang, "RapidCDC: Leveraging Duplicate Locality to Accelerate Chunking in CDC-based Deduplication Systems", in Proceedings of 2019 ACM Symposium on Cloud Computing (ACM SoCC'19，云计算顶级会议), Santa Cruz, CA, November, 2019.[\href{https://github.com/moking/RapidCDC}{code}]
+    \item \textbf{Fan Ni}, Xingbo Wu, Weijun Li, Lei Wang, and Song Jiang, “Leveraging SSD's Flexible Address Mapping to Accelerate Data Copy Operations”, in Proceedings of the IEEE 21st International Conference on High Performance Computing and Communications; (HPCC-2019，高性能计算知名会议), Zhangjiajie, China, August, 2019.
+    \item \textbf{Fan Ni}, Song Jiang, Hong Jiang, Xingbo Wu, and Jian Huang, “SDC: A Software Defined Cache Supporting Flexible Key-value-style Data Caching”, in Proceedings of the 33th ACM International Conference on Supercomputing (ICS'19，超算领域排名第二的会议), Phoenix, AZ, June, 2019.
+\item \textbf{Fan Ni}, Xing Lin, and Song Jiang, “SS-CDC: A Two-stage Parallel Content-Defined Chunking for Deduplicating Backup Storage", in Proceedings of the 12th ACM International Systems and Storage Conference (SYSTOR'19，知名系统会议), Haifa, Israel, June, 2019.[\href{https://github.com/NetApp/SS-CDC}{code}]
+\item Xingbo Wu, \textbf{Fan Ni}, and Song Jiang, "Wormhole: A Fast Ordered Index for In-memory Data Management", in Proceedings of the European Conference on Computer Systems (EuroSys'19，系统领域顶级会议), Dresden, Germany, March, 2019. [\href{https://github.com/wuxb45/wormhole}{code}]
+\item \textbf{Fan Ni}, Xingbo Wu, Weijun Li, Lei Wang, and Song Jiang. "WOJ: Enabling Write-Once Full-data Journaling in SSDs by using weak-hashing-based deduplication." Performance Evaluation (IFIP Performance 2018，性能测试领域顶级会议).
+\item \textbf{Fan Ni}, Xingbo Wu, Weijun Li, and Song Jiang. “ThinDedup: An I/O Deduplication Scheme that Minimizes Efficiency Loss due to Metadata Writes”, in Proceedings of the 37th IEEE International Performance Computing and Communications Conference (IPCCC'18), Orlando, Florida, November 2018. (\textbf{\it \textbf{Best Paper Candidate，最佳论文提名奖}})
+\item Xingbo Wu, \textbf{Fan Ni}, Song Jiang. Search Lookaside Buffer: Efficient Caching for Index Data Structures [SoCC'17] ACM Symposium on Cloud Computing 2017。（云计算顶级会议）
+\item Chunyi Liu, \textbf{Fan Ni}, Xingbo Wu, Xiao Zhang, Song Jiang. Freewrite: Creating (Almost) Zero-Cost Writes to SSD in Applications [SYSTOR'17] The 10th ACM International Systems and Storage Conference。（知名系统会议）
+\item \textbf{Fan Ni}, Chunyi Liu, Yang Wang, Chengzhong Xu, Xiao Zhang, Song Jiang. A Hash-based Space-efficient Page-level FTL for Large-capacity SSDs [NAS'17] 12th International Conference on Networking, Architecture, and Storage (NAS)
+\item Xingbo Wu, \textbf{Fan Ni}, Li Zhang, Yandong Wang, Yufei Ren, Michel Hack, Zili Shao, Song Jiang. NVMcached: An NVM-based Key-Value Cache [APSys'16] 7th ACM SIGOPS Asia-Pacific Workshop on Systems.（系统领域比较有名的workshop）。
+\item \textbf{NOTE}: More publications on \textbf{computer architecture} before 2016 can be found \href{https://scholar.google.com/citations?user=xMbxve0AAAAJ&hl=en}{here}.
+\end{enumerate}
+    
+
+\section{专利}
+\begin{itemize}
+    \item “Methods for optimized variable-size deduplication using two stage content-defined
+chunking and devices thereof”, US20200081868A1
+    \item 另外，申请及授予的中文专利10余项。
+\end{itemize}
+
+
+
+\section{专业技能}
+\begin{enumerate}
+\item	熟练的C语言编程技能。C语言是我的主要工作语言。此外我也熟悉C++。
+\item	熟悉Python编程及Shell编程。
+\item	书写内核知识，有过在块层实现数据去重功能的经验。
+\item	若干编译器开发经验。曾经在LLVM框架中实现了ARM模拟器中的二进制翻译。
+\item	具有CUDA编程经验，在CUDA平台上实现了一个并行的Cache模拟器。
+\item	熟悉常用数据结构，包括数组，链表，哈希表，树，堆栈等。
+\item   熟悉键值系统的设计，包括缓存系统及数据库。
+\item	若干网络编程经验，使用libuv库实现了一个TCP服务器。
+\end{enumerate}
+
+% \section{Other Skills}
+% \begin{description}[widest=Langauges]
+% %\item[Software]	GraphPad Prism, Microsoft Word, Excel, and PowerPoint, ImageJ
+% \item[Languages]	English: professional proficiency.  Mandarin: native.  
+% \end{description}
+
+
+
+\end{document}
